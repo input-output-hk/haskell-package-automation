@@ -9,7 +9,7 @@ runs:
   using: "composite"
   steps:
     - name: Writing repos file...
-      run: echo "${{ inputs.who-to-greet }}" > repos
+      run: echo "${{ inputs.repos }}" > repos
       shell: bash
     - name: Checking for updates...
       run: bash "${{ github.action_path }}"/go.sh
