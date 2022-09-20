@@ -1,0 +1,13 @@
+name: 'Haskell Package Automation'
+description: 'Automation for publishing packages to a custom foliage based hackage'
+inputs:
+  repos:
+    description: 'Repos to watch'
+    required: true
+    default: ''
+runs:
+  using: "composite"
+  steps:
+    - name: Checking for updates...
+      run: bash go.sh
+      shell: bash
