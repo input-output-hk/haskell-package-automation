@@ -62,7 +62,7 @@ while read -r repo; do
             fi
         done
     fi
-done < repos
+done <<<"$(grep -v -e '^[[:space:]]*$' -e '^#' repos)"
 
 # and now for the crazy part! Push the updated hackages
 for target in ghc-next-packages; do
