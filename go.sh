@@ -33,8 +33,10 @@ while read -r repo; do
             # ignore known tags
             echo "${REPO} ${tag}"
             if ! grep -q "${REPO} $tag" known_tags; then
+                echo "not in known_tags file..."
                 # hardcoded custom hackages for now
                 for target in ghc-next-packages cardano-haskell-packages; do
+                    echo "echeking against $target/rev/*"
                     case "$tag" in
                         $target/rev/*)
                             git -C "${REPO_DIR}" reset --hard "$tag"
