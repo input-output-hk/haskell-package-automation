@@ -31,6 +31,7 @@ while read -r repo; do
         #
         for tag in $(git -C "${REPO_DIR}" tag -l); do
             # ignore known tags
+            echo "${REPO} ${tag}"
             if ! grep -q "${REPO} $tag" known_tags; then
                 # hardcoded custom hackages for now
                 for target in ghc-next-packages cardano-haskell-packages; do
