@@ -9,5 +9,5 @@ runs:
   using: "composite"
   steps:
     - name: Checking for updates...
-      run: bash go.sh
+      run: bash "${{ github.action_path }}"/go.sh
       shell: bash
