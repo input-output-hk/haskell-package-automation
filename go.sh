@@ -65,6 +65,6 @@ while read -r repo; do
 done < repos
 
 # and now for the crazy part! Push the updated hackages
-for target in ghc-next-packages cardano-haskell-packages; do
+for target in ghc-next-packages; do
     git -C "_repos/$target" push
 done
