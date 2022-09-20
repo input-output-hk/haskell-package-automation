@@ -36,9 +36,9 @@ while read -r repo; do
                 echo "not in known_tags file..."
                 # hardcoded custom hackages for now
                 for target in ghc-next-packages cardano-haskell-packages; do
-                    echo "echeking against $target/rev/*"
+                    echo "echeking against $target/revision/*"
                     case "$tag" in
-                        $target/rev/*)
+                        $target/revision/*)
                             git -C "${REPO_DIR}" reset --hard "$tag"
                             REV=$(git -C "${REPO_DIR}" rev-parse "$tag")
                             echo "Found $tag @ $REV in ${REPO}; creating packages in $target..."
